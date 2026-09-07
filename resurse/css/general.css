@@ -573,3 +573,37 @@ tr:nth-last-child(1) td, tr:nth-last-child(2) td{
 a:visited{
     color:orange;
 } */
+
+/* --- Exercițiul 1 (Orar din imagine) --- */
+/* Inițiala zilelor (coloana 4 de la coadă) */
+#tab-orar tbody td:nth-last-child(4)::first-letter {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* Alternarea culorilor din antet */
+@keyframes alternareCulori {
+    from { background-color: red; }
+    to { background-color: blue; }
+}
+
+#tab-orar thead {
+    animation: alternareCulori 1s infinite alternate;
+}
+
+/* --- Exercițiul 2 (Întrebări frecvente din imagine) --- */
+/* Rotire titlu la 180 de grade */
+#index-intrebari h2 {
+    transform: rotate(180deg);
+}
+
+/* Întrebări afișate pe 4 coloane */
+#index-intrebari {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+#index-intrebari h2 {
+    grid-column: 1 / -1;
+}
