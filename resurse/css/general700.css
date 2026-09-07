@@ -1,0 +1,27 @@
+html{
+    font-size:10px;
+}
+
+body{
+    --spatiere--pagina:0;
+    margin: 0;
+}
+
+main{
+
+    --spatiere--pagina:15px;
+}
+
+
+.container-iframe{
+    display: none;
+}
+
+#grid-pagina{
+    display: block;
+}
+
+
+#grid-galerie img{
+    width: 50%;
+}

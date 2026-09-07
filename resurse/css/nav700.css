@@ -1,0 +1,47 @@
+nav{
+    --latime-buton:100%;
+
+}
+
+
+
+
+#hamburger{
+    display: block;
+}
+
+#hamburger img{
+    height:2rem;
+}
+
+ul.meniu{
+    display: none;
+    position: absolute;
+    width: 100%;
+    transform-origin: 0 0;
+    animation-name: afis_meniu;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+
+
+#ch-menu:checked+ul.meniu{
+    display: block;
+}
+
+
+
+
+
+@keyframes afis_meniu {
+  0% {
+    transform: scale(0,0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+}

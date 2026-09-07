@@ -1,0 +1,46 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier":"briose-frisca.png",
+			"descriere":"Brioșe",
+			"clase":"online, la expozitie",
+			"luni":["martie","februarie","noiembrie","aprilie", "decembrie","octombrie"]
+		},
+		{
+			"fisier":"clatite.png",
+			"descriere":"Clătite cu dulceață",
+			"clase":"magazin fizic, la expozitie",
+			"luni":["ianuarie","februarie","iunie","octombrie"]
+			
+		},
+		{
+			"fisier":"gogosi.png",
+			"descriere":"Gogoși glazurate",
+			"clase":"magazin fizic",
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+		},
+		{
+			"fisier":"tort-scortisoara.png",
+			"descriere":"Tort cu scorțisoară",			
+			"clase":"online, magazin fizic",
+			"luni":["noiembrie","aprilie", "decembrie"]
+		},
+		{
+			"fisier":"prajitura-ciocolata.png",
+			"descriere":"Prăjitură cu ciocolată",
+			"clase":"la expozitie, magazin fizic",
+			"luni":["noiembrie","aprilie", "decembrie","octombrie"]
+		},
+		{
+			"fisier":"tarta-afine.png",
+			"descriere":"Tartă cu afine",
+			"clase":"la expozitie, magazin fizic"
+		},
+		{
+			"fisier":"tort-trandafiri.png",
+			"descriere":"Tort special",
+			"clase":"la expozitie"
+		}
+	]
+}

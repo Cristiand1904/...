@@ -1,0 +1,45 @@
+#galerie-statica{
+  padding-left:var(--padding-intern);
+  padding-right:var(--padding-intern);
+}
+
+#grid-galerie {
+ display:grid;
+ grid-template-columns: repeat(3,1fr);
+ grid-row-gap:0.5em;
+ grid-column-gap:0.5em;
+ counter-reset: nrimag 0;  /* nrimag=0 */
+}
+#grid-galerie img{
+  width: 100%;
+}
+#grid-galerie figcaption{
+  text-align:center;
+  counter-increment: nrimag 1; /* nrimag+=1 */
+}
+
+#grid-galerie figcaption::before{
+  content: counter(nrimag, upper-alpha) ")";
+}
+
+@media screen and (max-width:500px){
+  #grid-galerie {
+      display:block;
+  }
+}
+
+i.la_expozitie, i.online, i.magazin_fizic{
+  display: none;
+}
+.la_expozitie i.la_expozitie{
+  display: inline-block;
+  color: orange;
+}
+.online i.online{
+  display: inline-block;
+  color: green;
+}
+.magazin_fizic i.magazin_fizic{
+  display: inline-block;
+  color:blueviolet;
+}

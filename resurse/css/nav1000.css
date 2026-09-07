@@ -1,0 +1,14 @@
+nav{
+    --latime-buton:80px;
+
+}
+
+ul.meniu div.imag-icon{
+
+    display: block;
+
+}
+
+ul.meniu div.text-icon{
+    display: none;
+}
