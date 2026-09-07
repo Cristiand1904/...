@@ -55,6 +55,10 @@
       
         <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
   
+        <button id="btn-unt">prajituri cu unt</button>
+        <ul class="prajituri-unt"></ul>
+        <p>Nr maxim: <span id="max-prajituri-unt"></span></p>
+
         <section id="produse">
 
             <h2>Produse</h2>
@@ -66,6 +70,7 @@
                             <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
                             <p class="calorii">Calorii: <span class="val-calorii"><%- prod.calorii%></span></p>
                             <p class="gramaj">Gramaj: <span class="val-gramaj"><%- prod.gramaj%></span></p>
+                            <p class="ingrediente">Ingrediente: <span class="val-ingrediente"><%- prod.ingrediente || prod.ingrediente_baza %></span></p>
                         </div>
                         <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
                         <figure>
@@ -82,5 +87,40 @@
     </main>
 
     <%- include("../fragmente/footer") %>
+
+    <script>
+        window.addEventListener('load', function() {
+            let maxSpan = document.getElementById('max-prajituri-unt');
+            let currentMax = parseInt(localStorage.getItem('maxPrajituriUnt')) || 0;
+            maxSpan.textContent = currentMax;
+
+            document.getElementById('btn-unt').addEventListener('click', function() {
+                let list = document.querySelector('.prajituri-unt');
+                list.innerHTML = '';
+                let articole = document.querySelectorAll('.produs');
+                let count = 0;
+                
+                for (let art of articole) {
+                    if (getComputedStyle(art).display !== 'none') {
+                        let spanIngred = art.querySelector('.val-ingrediente');
+                        let ingrediente = spanIngred ? spanIngred.textContent.toLowerCase() : "";
+                        if (ingrediente.includes('unt')) {
+                            let nume = art.querySelector('.val-nume').textContent;
+                            let li = document.createElement('li');
+                            li.textContent = nume;
+                            list.appendChild(li);
+                            count++;
+                        }
+                    }
+                }
+                
+                if (count > currentMax) {
+                    currentMax = count;
+                    localStorage.setItem('maxPrajituriUnt', currentMax);
+                    // Conform cerinței: nu se actualizează dinamic, ci doar la reîncărcarea paginii.
+                }
+            });
+        });
+    </script>
     </body>
 </html>
