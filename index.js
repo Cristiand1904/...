@@ -188,9 +188,18 @@ async function obtineUtilizatoriOnline(){
 
 
 app.get(["/", "/index","/home"], async function(req, res){
+    let d = new Date();
+    let curentMin = d.getHours() * 60 + d.getMinutes();
+    let imaginiFiltrate = obGlobal.obImagini.imagini.filter((img) => {
+        if (!img.ora_incepere) return false;
+        let p = img.ora_incepere.split(':');
+        let imgMin = parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
+        return imgMin < curentMin;
+    });
+
     res.render("pagini/index", {
         ip: req.ip,
-        imagini: obGlobal.obImagini.imagini,
+        imagini: imaginiFiltrate,
         useriOnline:await obtineUtilizatoriOnline(),
     });
 });
@@ -248,6 +257,12 @@ app.get("/produs/:id", function(req, res){
 
 
 
+
+app.get("/erori", function(req, res){
+    res.render("pagini/erori", {
+        erori: obGlobal.obErori.info_erori
+    });
+});
 
 function initErori(){
     let continut = fs.readFileSync(path.join(__dirname,"resurse/json/erori.json")).toString("utf-8");
@@ -310,7 +325,7 @@ function afisareEroare(res, identificator, titlu, text, imagine){
 // });
 
 function initImagini(){
-    var continut= fs.readFileSync(path.join(__dirname,"resurse/json/galerie.json")).toString("utf-8");
+    var continut= fs.readFileSync(path.join(__dirname,"resurse/json/galerie-ora-incepere.json")).toString("utf-8");
 
     obGlobal.obImagini=JSON.parse(continut);
     let vImagini=obGlobal.obImagini.imagini;

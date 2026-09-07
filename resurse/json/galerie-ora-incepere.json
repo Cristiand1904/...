@@ -1,0 +1,47 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier":"briose-frisca.png",
+			"descriere":"Brioșe",
+			"clase":"online, la expozitie",
+			"ora_incepere":"11:07"
+		},
+		{
+			"fisier":"clatite.png",
+			"descriere":"Clătite cu dulceață",
+			"clase":"magazin fizic, la expozitie",
+			"ora_incepere":"17:27"
+			
+		},
+		{
+			"fisier":"gogosi.png",
+			"descriere":"Gogoși glazurate",
+			"clase":"magazin fizic"
+		},
+		{
+			"fisier":"tort-scortisoara.png",
+			"descriere":"Tort cu scorțisoară",			
+			"clase":"online, magazin fizic",
+			"ora_incepere":"20:03"
+		},
+		{
+			"fisier":"prajitura-ciocolata.png",
+			"descriere":"Prăjitură cu ciocolată",
+			"clase":"la expozitie, magazin fizic",
+			"ora_incepere":"04:35"
+		},
+		{
+			"fisier":"tarta-afine.png",
+			"descriere":"Tartă cu afine",
+			"clase":"la expozitie, magazin fizic",
+			"ora_incepere":"09:22"
+		},
+		{
+			"fisier":"tort-trandafiri.png",
+			"descriere":"Tort special",
+			"clase":"la expozitie",
+			"ora_incepere":"18:47"
+		}
+	]
+}

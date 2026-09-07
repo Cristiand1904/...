@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Erori cu exclamatie</title>
+    <meta name="description" content="Erori cu exclamatie">
+    <meta name="keywords" content="erori, cofetarie">
+
+    <%- include('../fragmente/head.ejs') %>
+
+</head>
+
+<body>
+    <%- include('../fragmente/header.ejs') %>
+    <main>
+        <h1>Erori cu exclamatie</h1>
+        <ol>
+            <% for (let eroare of erori) { 
+                if (eroare.text && eroare.text.trim().endsWith("!")) { 
+                    let words = eroare.text.trim().split(/\s+/);
+                    let lastWord = words[words.length - 1];
+            %>
+            <li><%- eroare.identificator %>-<%- lastWord %></li>
+            <% 
+                } 
+            } %>
+        </ol>
+    </main>
+    <%- include('../fragmente/footer.ejs') %>
+</body>
+
+</html>
